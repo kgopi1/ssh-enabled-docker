@@ -13,6 +13,7 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
+RUN apt-get autoclean
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
